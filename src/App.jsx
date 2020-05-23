@@ -33,7 +33,6 @@ function OldPrice(props) {
   )
 }
 
-
 function Sale() {
   return (
     <>
