@@ -25,12 +25,19 @@ function Price(props) {
   )
 }
 
-
-
-function Sale(props) {
+function OldPrice(props) {
   return (
     <>
-      <button>Sale</button>
+      <p className="discountPrice">{props.oldPrice}</p>
+    </>
+  )
+}
+
+
+function Sale() {
+  return (
+    <>
+      <button class="btnSale">Sale</button>
     </>
   )
 }
@@ -51,6 +58,7 @@ function App() {
         <Title name="Bình giữ nhiệt"  />
         <Image imgURL="https://media3.scdn.vn/img4/2020/05_22/sxueK5fiNmwVFP4Xy6hD_simg_b5529c_250x250_maxb.jpg" />
         <Price price="300,000" />
+        <OldPrice oldPrice="500,000" />
         <Sale />
         <Tag tagName="FURNITURE" />
       </header>
