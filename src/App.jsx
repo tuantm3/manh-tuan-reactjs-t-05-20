@@ -1,99 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Layout from './components/Layout';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import Layout from "./components/Layout";
+import Content from "./components/Content";
+import ProductItem from "./components/ProductItem";
+import SideBar from "./components/SideBar";
 
 const products = [
   {
-    tag: "Furniture",
-    name: "Ấm nước",
-    imgURL: "https://media3.scdn.vn/img4/2020/05_22/sxueK5fiNmwVFP4Xy6hD_simg_b5529c_250x250_maxb.jpg",
-    price: "120,000",
-    discountPrice: "100,000"
+    type: "Furniture",
+    name: "Iphone 999",
+    imageURL:
+      "https://media3.scdn.vn/img4/2020/03_16/FBeRVqPng49HKEg1qnqs_simg_b5529c_250x250_maxb.jpg",
+    price: "120.000 VND",
+    discountPrice: "100.000 VND",
   },
   {
-    tag: "Furniture",
-    name: "Ấm nước",
-    imgURL: "https://media3.scdn.vn/img4/2020/02_27/1CyQhihZtTbxzEoR6Gkx_simg_b5529c_250x250_maxb.jpg",
-    price: "120,000",
-    discountPrice: "100,000"
+    type: "Tablet",
+    name: "Samsung Pro 123456",
+    imageURL:
+      "https://media3.scdn.vn/img4/2020/03_04/O6MAvAed87qmmdqsFaYw_simg_b5529c_250x250_maxb.jpg",
+    price: "720.000 VND",
+    discountPrice: "520.000 VND",
   },
   {
-    tag: "Furniture",
-    name: "Ấm nước",
-    imgURL: "https://media3.scdn.vn/img4/2020/05_22/sxueK5fiNmwVFP4Xy6hD_simg_b5529c_250x250_maxb.jpg",
-    price: "120,000",
-    discountPrice: "100,000"
+    type: "Baby",
+    name: "Bobby",
+    imageURL:
+      "https://media3.scdn.vn/img4/2020/03_18/fx0jRvqJ7wVYmcj9swIb_simg_b5529c_250x250_maxb.jpg",
+    price: "110.000 VND",
+    discountPrice: "78.000 VND",
   },
-]
+];
 
-function Title(props) {
+function App() {
   return (
-    <>
-      <p>Product: {props.name}</p>
-      <p>Tag: {props.tag}</p>
-    </>
-  )
+    <Layout>
+      <Content quantity={products.length}>
+          
+          {/* // imgURL={products[0].imgURL}
+          // tag={products[0].tag}
+          // name={products[0].name}
+          // price={products[0].price}
+          // discountPrice={products[0].discountPrice}/> */}
+              {
+        products.map(elm => { 
+          return <ProductItem {...elm} />
+        })
+  }
+      </Content>
+  
+      <SideBar />
+    </Layout>
+  );
 }
-
-function Image(props) {
-  return (
-    <img src={props.imgURL} />
-  )
-}
-
-function Price(props) {
-  return (
-    <>
-      <p>Price: {props.price}</p>
-      <strike>{props.discountPrice}</strike>
-    </>
-  )
-}
-
-function Sale() {
-  return (
-    <>
-      <button class="btnSale">Sale</button>
-    </>
-  )
-}
-
-
-function ProductItem(props) {
-  return (
-    <div>
-      <Image imgURL={props.data.imgURL}/>
-      <Title tag={props.data.tag} name={props.data.name}/>
-      <Price price={props.data.price} discountPrice={props.data.discountPrice}/>
-    </div>
-  )
-}
-
-// function App() {
-//   return (
-//     <div className="products">
-//       {
-//         products.map(elm => {
-//           return <ProductItem data={elm} />
-//         })
-//       }
-//     </div>
-//   );
-//     }
-
-    function App() {
-      return (
-        <Layout>
-        <div className="products">
-          {
-            products.map(elm => {
-              return <ProductItem data={elm} />
-            })
-          }
-        </div>
-        </Layout>
-      );
-        }
 
 export default App;
