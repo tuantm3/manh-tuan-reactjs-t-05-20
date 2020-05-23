@@ -1,12 +1,37 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Layout from './components/Layout';
+
+const products = [
+  {
+    tag: "Furniture",
+    name: "Ấm nước",
+    imgURL: "https://media3.scdn.vn/img4/2020/05_22/sxueK5fiNmwVFP4Xy6hD_simg_b5529c_250x250_maxb.jpg",
+    price: "120,000",
+    discountPrice: "100,000"
+  },
+  {
+    tag: "Furniture",
+    name: "Ấm nước",
+    imgURL: "https://media3.scdn.vn/img4/2020/02_27/1CyQhihZtTbxzEoR6Gkx_simg_b5529c_250x250_maxb.jpg",
+    price: "120,000",
+    discountPrice: "100,000"
+  },
+  {
+    tag: "Furniture",
+    name: "Ấm nước",
+    imgURL: "https://media3.scdn.vn/img4/2020/05_22/sxueK5fiNmwVFP4Xy6hD_simg_b5529c_250x250_maxb.jpg",
+    price: "120,000",
+    discountPrice: "100,000"
+  },
+]
 
 function Title(props) {
   return (
     <>
       <p>Product: {props.name}</p>
-      <Image imageURL={props.imgURL} />
+      <p>Tag: {props.tag}</p>
     </>
   )
 }
@@ -21,14 +46,7 @@ function Price(props) {
   return (
     <>
       <p>Price: {props.price}</p>
-    </>
-  )
-}
-
-function OldPrice(props) {
-  return (
-    <>
-      <p className="discountPrice">{props.oldPrice}</p>
+      <strike>{props.discountPrice}</strike>
     </>
   )
 }
@@ -41,28 +59,41 @@ function Sale() {
   )
 }
 
-function Tag(props) {
+
+function ProductItem(props) {
   return (
-    <>
-      <p>{props.tagName}</p>
-    </>
+    <div>
+      <Image imgURL={props.data.imgURL}/>
+      <Title tag={props.data.tag} name={props.data.name}/>
+      <Price price={props.data.price} discountPrice={props.data.discountPrice}/>
+    </div>
   )
 }
 
+// function App() {
+//   return (
+//     <div className="products">
+//       {
+//         products.map(elm => {
+//           return <ProductItem data={elm} />
+//         })
+//       }
+//     </div>
+//   );
+//     }
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Title name="Bình giữ nhiệt"  />
-        <Image imgURL="https://media3.scdn.vn/img4/2020/05_22/sxueK5fiNmwVFP4Xy6hD_simg_b5529c_250x250_maxb.jpg" />
-        <Price price="300,000" />
-        <OldPrice oldPrice="500,000" />
-        <Sale />
-        <Tag tagName="FURNITURE" />
-      </header>
-    </div>
-  );
-}
+    function App() {
+      return (
+        <Layout>
+        <div className="products">
+          {
+            products.map(elm => {
+              return <ProductItem data={elm} />
+            })
+          }
+        </div>
+        </Layout>
+      );
+        }
 
 export default App;
