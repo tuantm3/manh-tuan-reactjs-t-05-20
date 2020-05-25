@@ -9,25 +9,25 @@ import SideBar from "./components/SideBar";
 const products = [
   {
     type: "Furniture",
-    name: "Iphone 999",
+    name: "POP! ROCKS: 10'' NOTORIOUS B.I.G WITH CROWN",
     imageURL:
-      "https://media3.scdn.vn/img4/2020/03_16/FBeRVqPng49HKEg1qnqs_simg_b5529c_250x250_maxb.jpg",
+      "https://cdn.shopify.com/s/files/1/1052/2158/products/48587_NotoriousBIG_BiggieCrown_10inPOP_FrontView_WEB_440x.png",
     price: "120.000 VND",
     discountPrice: "100.000 VND",
   },
   {
     type: "Tablet",
-    name: "Samsung Pro 123456",
+    name: "RAIN CITY FREDDY VINYL FIGURE",
     imageURL:
-      "https://media3.scdn.vn/img4/2020/03_04/O6MAvAed87qmmdqsFaYw_simg_b5529c_250x250_maxb.jpg",
+      "https://cdn.shopify.com/s/files/1/1052/2158/products/29371_440x.png",
     price: "720.000 VND",
     discountPrice: "520.000 VND",
   },
   {
     type: "Baby",
-    name: "Bobby",
+    name: "POP! ANIMATION: 10'' HUCKLEBERRY HOUND",
     imageURL:
-      "https://media3.scdn.vn/img4/2020/03_18/fx0jRvqJ7wVYmcj9swIb_simg_b5529c_250x250_maxb.jpg",
+      "https://cdn.shopify.com/s/files/1/1052/2158/products/47351_HannaBarbara_HuckleberryHound10_POP_GLAM-1_440x.png",
     price: "110.000 VND",
     discountPrice: "78.000 VND",
   },
